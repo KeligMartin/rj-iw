@@ -1,40 +1,25 @@
-for (let i = 2; i < 100; i++) {
+import { tasks, sortedByPriority } from "./tasks/task.controller.js"
 
-    let premier = true;
+const monTableau = document.getElementById('task-table')
+const priorityColonne = document.getElementById('priority')
 
-    for (let j = 2; j < i; j++) {
+function afficherTasks(data) {
+    monTableau.innerHTML = ''
 
-        if (i % j === 0) {
-            premier = false;
-            break;
-        }
-    }
+    data.forEach((task) => {
+        monTableau.innerHTML += `
+            <tr>
+                <td>${task.titre}</td>
+                <td>${task.description}</td>
+                <td>${task.priority}</td>
+            </tr>
+        `
+    })
 }
 
-function add(a, b = 12) { // type de retour : (chiffre entier)
-    return a + b;
-} // return --> renvoie de donnée
+afficherTasks(tasks)
 
-const multiply = (a, b) => a * b; // return caché
-
-const substract = (a, b) => {
-    console.log(a - b);
-}
-
-const resultatDe12Plus14 = add(12, 14) // 26
-
-const resultatDe3Fois10 = multiply(3, 10) // 30
-
-class Personne {
-
-    constructor(nom, prenom) {
-        this.nom = nom;
-        this.prenom = prenom;
-    }
-}
-
-let p = new Personne("Dupont", "Jean");
-
-let t = [1, 2, 3, 4, 5]
-
-console.table(t)
+priorityColonne.addEventListener('click', () => {
+    console.log('test')
+    afficherTasks(sortedByPriority)
+})
