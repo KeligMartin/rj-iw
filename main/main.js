@@ -11,15 +11,19 @@ for (let i = 2; i < 100; i++) {
     }
 }
 
-function add(a, b = 12) {
+function add(a, b = 12) { // type de retour : (chiffre entier)
     return a + b;
-}
+} // return --> renvoie de donnée
 
 const multiply = (a, b) => a * b; // return caché
 
 const substract = (a, b) => {
-    return a - b;
+    console.log(a - b);
 }
+
+const resultatDe12Plus14 = add(12, 14) // 26
+
+const resultatDe3Fois10 = multiply(3, 10) // 30
 
 class Personne {
 
