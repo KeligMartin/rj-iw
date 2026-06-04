@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distributeur de billets</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg">
+                <div class="card-header text-center">
+                    <h2>Distributeur Automatique</h2>
+                </div>
+                <div class="card-body">
+                    <div id="message" class="alert alert-info">
+                        Veuillez sélectionner un compte.
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label">
+                            Type de compte
+                        </label>
+
+                        <select id="accountType" class="form-select">
+                            <option value="">-- Sélectionner --</option>
+                            <option value="current">
+                                Compte Courant
+                            </option>
+                            <option value="savings">
+                                Compte Épargne
+                            </option>
+                        </select>
+                    </div>
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5>Informations du compte</h5>
+                            <p>
+                                Titulaire :
+                                <strong id="ownerName">
+                                    -
+                                </strong>
+                            </p>
+                            <p>
+                                Numéro :
+                                <strong id="accountNumber">
+                                    -
+                                </strong>
+                            </p>
+                            <p>
+                                Solde :
+                                <strong id="balance">
+                                    --
+                                </strong>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label">
+                            Montant (€)
+                        </label>
+                        <input
+                                type="number"
+                                id="amount"
+                                class="form-control"
+                                min="10"
+                                step="10"
+                                placeholder="Ex : 100">
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button
+                                id="btnBalance"
+                                class="btn btn-primary">
+                            Consulter le solde
+                        </button>
+                        <button
+                                id="btnWithdraw"
+                                class="btn btn-success">
+                            Retirer
+                        </button>
+                        <button
+                                id="btnDeposit"
+                                class="btn btn-warning">
+                            Déposer
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>

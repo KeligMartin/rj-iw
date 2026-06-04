@@ -1,4 +1,4 @@
-import { tasks, sortedByPriority } from "./tasks/task.controller.js"
+import { tasks, sortedByPriority, sortedByDescription } from "./tasks/task.controller.js"
 
 const monTableau = document.getElementById('task-table')
 const priorityColonne = document.getElementById('priority')
@@ -20,6 +20,5 @@ function afficherTasks(data) {
 afficherTasks(tasks)
 
 priorityColonne.addEventListener('click', () => {
-    console.log('test')
     afficherTasks(sortedByPriority)
 })

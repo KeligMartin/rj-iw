@@ -13,3 +13,4 @@ const task4 = new Task('Logout', 'code logout', 8, 1, owner)
 export const tasks = [task1, task2, task3, task4]
 
 export const sortedByPriority = [...tasks].sort((t1, t2) => t1.priority - t2.priority)
+export const sortedByDescription = [...tasks].sort((t1, t2) => t1.description - t2.description)
