@@ -3,13 +3,6 @@ interface Meal {
     price : number,
     calories: number,
     isVegan: boolean,
-    categorie: MealCategory
-}
-
-enum MealCategory {
-    STARTER,
-    MAIN,
-    DESSERT
 }
 
 type Category = 'main' | 'starter' | 'dessert'
